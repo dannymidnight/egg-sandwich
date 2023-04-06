@@ -2,14 +2,18 @@ steps:
   - group: ":egg: Build egg sandwich"
     key: "build"
     steps:
-      - command: "Boil egg"
-      - command: "Chop lettuce"
+      - label: "Boil egg :wind::egg:"
+        command: "exit 1"
+
+      - label: "Chop lettuce :knife::lettuce"
+        command: "exit 1"
 
   - label: "Test integrity of egg sandwitch"
     key: "test"
     depends_on: "build"
+    command: "exit 1"
 
   - label: "Send egg sandwich into space"
     key: "deploy"
     depends_on: "test"
-    command: ""
+    command: "exit 1"
