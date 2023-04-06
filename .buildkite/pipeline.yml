@@ -1,0 +1,15 @@
+steps:
+  - group: ":egg: Build egg sandwich"
+    key: "build"
+    steps:
+      - command: "Boil egg"
+      - command: "Chop lettuce"
+
+  - label: "Test integrity of egg sandwitch"
+    key: "test"
+    depends_on: "build"
+
+  - label: "Send egg sandwich into space"
+    key: "deploy"
+    depends_on: "test"
+    command: ""
