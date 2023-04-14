@@ -1,19 +1,22 @@
 steps:
-  - group: ":egg: Build egg sandwich"
+  - group: ":chef: :sandwich: Build sandwich"
     key: "build"
     steps:
-      - label: "Boil egg :wind::egg:"
-        command: "exit 1"
+      - label: ":egg: Boil egg"
+        command: "exit 0"
 
-      - label: "Chop lettuce :knife::lettuce"
-        command: "exit 1"
+      - label: ":leafy_green: Chop lettuce "
+        command: "exit 0"
 
-  - label: "Test integrity of egg sandwitch"
+      - label: ":butter: Butter bread"
+        command: "exit 0"
+
+  - label: ":point_right: :sandwich: Test sandwich"
     key: "test"
     depends_on: "build"
-    command: "exit 1"
+    command: "exit 0"
 
-  - label: "Send egg sandwich into space"
+  - label: ":partyparrot: Eat sandwich"
     key: "deploy"
     depends_on: "test"
-    command: "exit 1"
+    command: "exit 0"
